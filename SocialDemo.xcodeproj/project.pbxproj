@@ -13,6 +13,10 @@
 		28E6DD062B42DF0B006BF370 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E6DD052B42DF0B006BF370 /* HomeViewModel.swift */; };
 		28E6DD0F2B42F930006BF370 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 28E6DD0E2B42F930006BF370 /* SQLite */; };
 		28E6DD122B42F9B4006BF370 /* SQLiteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E6DD112B42F9B4006BF370 /* SQLiteHelper.swift */; };
+		5C06DE4E2B443ECF0086DD07 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C06DE492B443ECF0086DD07 /* CoreDataManager.swift */; };
+		5C06DE4F2B443ECF0086DD07 /* CDAPIResponse+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C06DE4A2B443ECF0086DD07 /* CDAPIResponse+CoreDataProperties.swift */; };
+		5C06DE502B443ECF0086DD07 /* CDModal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C06DE4B2B443ECF0086DD07 /* CDModal.xcdatamodeld */; };
+		5C06DE512B443ECF0086DD07 /* CDAPIResponse+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C06DE4D2B443ECF0086DD07 /* CDAPIResponse+CoreDataClass.swift */; };
 		5C9057A02B3E8CA9003F6574 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C90579F2B3E8CA9003F6574 /* AppDelegate.swift */; };
 		5C9057A22B3E8CA9003F6574 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9057A12B3E8CA9003F6574 /* SceneDelegate.swift */; };
 		5C9057A42B3E8CA9003F6574 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9057A32B3E8CA9003F6574 /* ViewController.swift */; };
@@ -61,6 +65,10 @@
 		28E6DD052B42DF0B006BF370 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		28E6DD112B42F9B4006BF370 /* SQLiteHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteHelper.swift; sourceTree = "<group>"; };
 		39EE54A1109D4751F1265F93 /* Pods-SocialDemo-SocialDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialDemo-SocialDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-SocialDemo-SocialDemoUITests/Pods-SocialDemo-SocialDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5C06DE492B443ECF0086DD07 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		5C06DE4A2B443ECF0086DD07 /* CDAPIResponse+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDAPIResponse+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5C06DE4C2B443ECF0086DD07 /* CDModal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CDModal.xcdatamodel; sourceTree = "<group>"; };
+		5C06DE4D2B443ECF0086DD07 /* CDAPIResponse+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDAPIResponse+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5C90579C2B3E8CA9003F6574 /* SocialDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C90579F2B3E8CA9003F6574 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C9057A12B3E8CA9003F6574 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +155,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5C06DE472B443EB50086DD07 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				5C06DE482B443ECF0086DD07 /* CoreData */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		5C06DE482B443ECF0086DD07 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				5C06DE492B443ECF0086DD07 /* CoreDataManager.swift */,
+				5C06DE4A2B443ECF0086DD07 /* CDAPIResponse+CoreDataProperties.swift */,
+				5C06DE4B2B443ECF0086DD07 /* CDModal.xcdatamodeld */,
+				5C06DE4D2B443ECF0086DD07 /* CDAPIResponse+CoreDataClass.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		5C9057932B3E8CA9003F6574 = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +199,7 @@
 		5C90579E2B3E8CA9003F6574 /* SocialDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5C06DE472B443EB50086DD07 /* Database */,
 				28E6DD102B42F974006BF370 /* SQLLiteDatabase */,
 				28E6DD002B42DE86006BF370 /* ViewModal */,
 				5C96B4572B3ECB610005190C /* DataModel */,
@@ -465,12 +493,16 @@
 				5C9057A42B3E8CA9003F6574 /* ViewController.swift in Sources */,
 				5C9057A02B3E8CA9003F6574 /* AppDelegate.swift in Sources */,
 				28E6DD062B42DF0B006BF370 /* HomeViewModel.swift in Sources */,
+				5C06DE512B443ECF0086DD07 /* CDAPIResponse+CoreDataClass.swift in Sources */,
 				28E6DD042B42DEEB006BF370 /* ProfileViewModel.swift in Sources */,
 				5C9057A22B3E8CA9003F6574 /* SceneDelegate.swift in Sources */,
+				5C06DE4E2B443ECF0086DD07 /* CoreDataManager.swift in Sources */,
 				28E6DD022B42DEC0006BF370 /* User.swift in Sources */,
+				5C06DE4F2B443ECF0086DD07 /* CDAPIResponse+CoreDataProperties.swift in Sources */,
 				288116052B42CBBA004C6109 /* ProfileViewController.swift in Sources */,
 				5C96B4592B3ECB800005190C /* APIDataModel.swift in Sources */,
 				5C9057DC2B3EAD24003F6574 /* HomeViewController.swift in Sources */,
+				5C06DE502B443ECF0086DD07 /* CDModal.xcdatamodeld in Sources */,
 				28E6DD122B42F9B4006BF370 /* SQLiteHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -876,6 +908,19 @@
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		5C06DE4B2B443ECF0086DD07 /* CDModal.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5C06DE4C2B443ECF0086DD07 /* CDModal.xcdatamodel */,
+			);
+			currentVersion = 5C06DE4C2B443ECF0086DD07 /* CDModal.xcdatamodel */;
+			path = CDModal.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5C9057942B3E8CA9003F6574 /* Project object */;
 }

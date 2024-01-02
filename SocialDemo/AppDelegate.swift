@@ -7,6 +7,7 @@
 
 import UIKit
 import GoogleSignIn
+import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -57,6 +58,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If not handled by this app, return false.
         return false
     }
+    
+    var window: UIWindow?
+        
+        lazy var persistentContainer: NSPersistentContainer = {
+            let container = NSPersistentContainer(name: "CDModal")
+            container.loadPersistentStores(completionHandler: { (_, error) in
+                if let error = error as NSError? {
+                    fatalError("Unresolved error \(error), \(error.userInfo)")
+                }
+            })
+            return container
+        }()
     
 }
 
